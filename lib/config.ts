@@ -11,8 +11,8 @@ const config = {
         uptash: {
             redisUrl: process.env.UPTASH_REDIS_URL!,
             redisToken: process.env.UPTASH_REDIS_TOKEN!,
-            qtashUrl: process.env.QTASH_URL!,
-            qtashToken: process.env.QTASH_TOKEN!,
+            qtashUrl: process.env.QSTASH_URL!,
+            qtashToken: process.env.QSTASH_TOKEN!,
         },
         resendToken: process.env.RESEND_TOKEN!,
     },
