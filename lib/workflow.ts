@@ -16,7 +16,8 @@ export const sendEmail = async ({ email, subject, message } : {email: string; su
             provider: resend({ token: config.env.uptash.qtashToken }),
         },
         body: {
-            from: "LQC <hello.quyoccanlibrary.shop>",
+            from: "LQC <contact@quoccanlibrary.shop>",
+            //hello.quoccanlibrary.shop
             to: [email],
             subject,
             html: message,
