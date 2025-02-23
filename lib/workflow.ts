@@ -13,7 +13,7 @@ export const sendEmail = async ({ email, subject, message } : {email: string; su
     await qtashClient.publishJSON({
         api: {
             name: "email",
-            provider: resend({ token: config.env.uptash.qtashToken }),
+            provider: resend({ token: config.env.resendToken }),
         },
         body: {
             from: "LQC <contact@quoccanlibrary.shop>",
