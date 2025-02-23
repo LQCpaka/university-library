@@ -18,14 +18,19 @@ import { Input } from "@/components/ui/input"
 import Link from 'next/link'
 import { FIELD_NAMES, FIELD_TYPES } from '@/constants'
 import ImageUpload from './ImageUpload'
+import { toast } from '@/hooks/use-toast'
+import { useRouter } from 'next/navigation'
 
 interface Props<T extends FieldValues> {
     schema: ZodType<T>;
     defaultValues: T;
-    onSubmit: (data: T) => Promise<{ sucess: boolean, error?: string }>;
+    onSubmit: (data: T) => Promise<{ success: boolean, error?: string }>;
     type: 'SIGN_IN' | 'SIGN_UP';
 }
+
+
 const AuthForm = <T extends FieldValues>({ type, schema, defaultValues, onSubmit }: Props<T>) => {
+    const router = useRouter();
     const isSignIn = type === "SIGN_IN";
 
     const form: UseFormReturn<T> = useForm({
@@ -33,7 +38,23 @@ const AuthForm = <T extends FieldValues>({ type, schema, defaultValues, onSubmit
         defaultValues: defaultValues as DefaultValues<T>
     })
 
-    const handleSubmit: SubmitHandler<T> = async (data) => { };
+    const handleSubmit: SubmitHandler<T> = async (data) => {
+        const result = await onSubmit(data);
+        if (result.success){
+            toast({
+                title: "Thông báo",
+                description: isSignIn ? "Đăng nhập thành công" : "Đăng ký thành công",
+                variant: "success",
+            });
+            router.push('/');
+        } else {
+            toast({
+                title: `Lỗi ${isSignIn? 'đăng nhập' : 'đăng ký'}`,
+                description: result.error ??  "Đã xảy ra lỗi",
+                variant: "destructive",
+            });
+        }
+     };
     return (
         <div className='flex flex-col gap-4'>
             <h1 className='text-2xl font-semibold text-white'>
