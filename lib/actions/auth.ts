@@ -56,14 +56,17 @@ export const signUp = async (params: AuthCrendentials) =>{
             universityId,
             universityCard
         });
+        
         await workflowClient.trigger({
             url: `${config.env.prodApiEndpoint}/api/workflows/onboarding`,
             body:{
                 email,
-                fullName
-            }
-        })
+                fullName,
+            },
+        });
+
         await signInwithCredentials({email, password});
+
         return { success: true };
     } catch (error) {
         console.log(error, "Signup error");
