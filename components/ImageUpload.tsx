@@ -2,11 +2,9 @@
 
 import config from '@/lib/config';
 import {IKImage, ImageKitProvider, IKUpload, ImageKitContext} from 'imagekitio-next'
-
 import React, { useRef, useState } from 'react'
 import { Button } from './ui/button';
 import Image from 'next/image';
-import { Description } from '@radix-ui/react-toast';
 import { toast } from '@/hooks/use-toast';
 
 const { env: {imagekit : {publicKey, urlEndpoint}} } = config;
@@ -14,7 +12,7 @@ const { env: {imagekit : {publicKey, urlEndpoint}} } = config;
 
 const authenticator = async () =>{
   try {
-    const response = await fetch(`${config.env.apiEndpoint}/api/auth/imagekit`);
+    const response = await fetch(`${config.env.apiEndpoint}/api/imagekit`);
     if(!response.ok) {
       const errorText = await response.text();
       throw new Error(`Request fail with status: ${response.status} : ${errorText}`);
