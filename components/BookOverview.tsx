@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import { Button } from './ui/button'
 import BookCover from './BookCover'
 import BorrowBook from './BorrowBook';
 import { eq, is } from 'drizzle-orm';
