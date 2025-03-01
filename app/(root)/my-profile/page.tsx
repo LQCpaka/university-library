@@ -7,15 +7,7 @@ import React from 'react'
 const Page = () => {
   return (
     <>
-        <form action={async ()=>{
-            'use server';
-
-            await signOut();   
-        }}
-        className='mb-10'
-        >
-            <Button>Đăng Xuất</Button>   
-        </form>    
+         
         <BookList title='Mượn Sách' books={sampleBooks}/>
     </>
   )

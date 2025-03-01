@@ -22,6 +22,27 @@
       "when": 1740082129591,
       "tag": "0002_massive_quentin_quire",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1740649565454,
+      "tag": "0003_workable_union_jack",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1740812920155,
+      "tag": "0004_graceful_stepford_cuckoos",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1740813644951,
+      "tag": "0005_empty_chronomancer",
+      "breakpoints": true
     }
   ]
 }
