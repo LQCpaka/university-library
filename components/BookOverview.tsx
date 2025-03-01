@@ -12,10 +12,9 @@ interface Props extends Book {
 const BookOverview = async ({ title, author, genre, rating, totalCopies, availableCopies, description, coverColor, coverUrl, id, userId, }: Book) => {
     const [user] = await db.select().from(users).where(eq(users.id, userId)).limit(1);
 
-    if (!user) return null;
 
     const borrowingEligibility = {
-        isEligible: availableCopies > 0 && user.status === 'APPROVED',
+        isEligible: availableCopies > 0 && user?.status === 'APPROVED',
         message: availableCopies < 0 ? 'Sách hiện không có sẵn để mượn' : 'Tài khoản của bạn chưa được duyệt để mượn sách',
 
 
