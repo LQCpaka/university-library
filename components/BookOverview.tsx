@@ -8,7 +8,7 @@ import { db } from '@/database/drizzle';
 interface Props extends Book {
     userId: string;
 }
-const BookOverview = async ({ title, author, genre, rating, totalCopies, availableCopies, description, coverColor, coverUrl, id, userId, }: Book) => {
+const BookOverview = async ({ title, author, genre, rating, totalCopies, availableCopies, description, coverColor, coverUrl, id, userId, }: Props) => {
     const [user] = await db.select().from(users).where(eq(users.id, userId)).limit(1);
 
 
