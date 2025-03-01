@@ -11,7 +11,7 @@ export const borrowBook = async (params: BorrowBookParams) => {
     try{
         const book = await db.select({availableCopies: books.availableCopies}).from(books).where(eq(books.id, bookId)).limit(1);
 
-        if(!book.length || book[0].availableCopies === 0){
+        if(!book.length || book[0].availableCopies <= 0){
             return {
                 success: false,
                 error: 'Sách hiện không có sẵn để mượn'
@@ -31,14 +31,14 @@ export const borrowBook = async (params: BorrowBookParams) => {
         
         return {
             success: true,
-            data: JSON.parse(JSON.stringify(record))
-        }
+            data: JSON.parse(JSON.stringify(record)),
+        };
     } catch (error) {
         console.error(error);
 
         return {
             success: false,
             message: "Có lỗi đã xảy ra trong quá trình mượn sách"
-        }
+        };
     }
 }
