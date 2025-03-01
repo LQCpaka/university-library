@@ -39,7 +39,7 @@ const BorrowBook = ({userId, bookId, borrowingEligibility: {isEligible, message}
                     description: 'Sách đã được mượn',
                     variant: 'success'
                 })
-                router.push('/my-profile')
+                router.push('/')
             } else {
                 toast({
                     title: 'Lỗi',
