@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Dự Án - [`Thư Viện Trường Đại Học`](https://university-library-nine-ecru.vercel.app/)
 
-## Getting Started
+<img style="border-radius: 10px;" src="./public/images/project-preview.png">
 
-First, run the development server:
+## Công Nghệ Sử Dụng
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- `Typescript`
+- `Nextjs` - Phiên bản 15.1.6
+- `Tailwindcss` - Sử dụng thư viện [`shadcn`](https://ui.shadcn.com/)
+- `Postgresql` - Sử dụng [`Neon - Serverless`](https://neon.tech/) để tạo serverless, setup database
+- [`Resend`](https://resend.com/) [`Upstash`](https://upstash.com/) - Sử dụng để gửi mail (Gửi mail chào mừng người dùng đã đăng ký, người dùng đã không active trong 1 khoảng thời gian nhất định)
+- [`Authjs - Next Auth`](https://authjs.dev/) - Hệ thống đăng nhập, đăng ký
+- [`Vercel`](https://vercel.com/) - Hosting dự án
+- [`ImageKit`](https://imagekit.io/) - Lưu trữ hình ảnh (Cloud Storage)
+
+<br>
+<div><img  src="https://skillicons.dev/icons?i=typescript,nextjs,tailwindcss,postgresql,vercel" /> <br><div>
+
+
+
+## Trạng thái dự án - Thông Tin dự án
+
+- Dự án vẫn đang trong trạng thái phát triển, sẽ bổ sung khi có thể.
+
+- Dự án về thư viện cho trường đại học/cao đẳng. Cho phép người dùng (sinh viên) mượn sách. Kiểm soát thông tin mượn sách và trạng thái mượn sách cho từng sinh viên, phê duyệt yêu cầu duyệt thành viên.
+
+## Sử Dụng Dự Án
+
+- Đọc file `config.ts`, theo cấu hình các config mà bổ sung endpoint, key, token. Tạo file `.env.local` và bổ sung vào đó
+
+- Sẽ có vài tính năng hiện tại chưa được bổ sung, sẽ bổ sung vào tương lai gần~
+
+<img style="border-radius: 10px;" src="./public/images/project-preview2.png">
+
+## file .env.local
+
+**Trong trường hợp bạn không biết cấu hình thế nào:**
+
+
+
+```NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT= 
+NEXT_PUBLIC_IMAGEKIT_PUBLIC_KEY=
+IMAGEKIT_PRIVATE_KEY=
+
+NEXT_PUBLIC_API_ENDPOINT=http://localhost:3000
+
+DATABASE_URL=
+AUTH_SECRET=
+
+UPTASH_REDIS_URL=
+UPTASH_REDIS_TOKEN=
+
+QSTASH_URL=
+QSTASH_TOKEN=
+QSTASH_CURRENT_SIGNING_KEY=
+QSTASH_NEXT_SIGNING_KEY=
+
+RESEND_TOKEN=
+
+NEXT_PUBLIC_PROD_API_ENDPOINT=(Đây là endpoint khi xuất thành product deploy lên hosting, ở đây mình dùng vercel)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- <ins>env.local</ins> - File config
