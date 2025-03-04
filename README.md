@@ -24,13 +24,14 @@
 
 - Dự án về thư viện cho trường đại học/cao đẳng. Cho phép người dùng (sinh viên) mượn sách. Kiểm soát thông tin mượn sách và trạng thái mượn sách cho từng sinh viên, phê duyệt yêu cầu duyệt thành viên.
 
+<img style="border-radius: 10px;" src="./public/images/project-preview2.png">
+
 ## Sử Dụng Dự Án
 
 - Đọc file `config.ts`, theo cấu hình các config mà bổ sung endpoint, key, token. Tạo file `.env.local` và bổ sung vào đó
 
 - Sẽ có vài tính năng hiện tại chưa được bổ sung, sẽ bổ sung vào tương lai gần~
 
-<img style="border-radius: 10px;" src="./public/images/project-preview2.png">
 
 ## file .env.local
 
